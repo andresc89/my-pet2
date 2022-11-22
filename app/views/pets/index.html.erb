@@ -5,9 +5,22 @@
   </div>
 </div> %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://petdelicia.com.br/blog/wp-content/uploads/2020/05/Captura-de-Tela-2020-05-28-a%CC%80s-00.23.33.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.flytap.com/-/media/Flytap/new-tap-pages/travelling-with-animals/pets/flying-with-pets-og-image-1200x630.jpg);">
   <div class="container">
     <h1><strong> My Pet!</strong></h1>
     <p> Book a pet (because why not?) and register your own pet in the market!</p>
+  </div>
+</div>
+
+  <div class="row">
+    <% @pets.each do |pet| %>
+      <div class="co-12 col-sm-6 col-md-4 mb-3">
+        <%= link_to pet_path(pet), class:"text-decoration-none" do %>
+          <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.flytap.com/-/media/Flytap/new-tap-pages/travelling-with-animals/pets/flying-with-pets-og-image-1200x630.jpg)">
+            <%= pet.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
