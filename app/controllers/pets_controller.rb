@@ -6,12 +6,19 @@ class PetsController < ApplicationController
   end
 
   def edit
+    @pet = Pet.last
+    render :new
     authorize @pet
   end
 
   def update
-    @pet = Pet.find(pet_params)
+    @pet = Pet.find(params[:id])
     authorize @pet
+    if @pet.update(params.require(:pet).permit(:name, :species, :price))
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -32,11 +39,16 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     authorize @pet
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def pet_params
-    params.require(:pet).permit(:name)
+    params.require(:pet).permit([:name, :species, :price])
   end
 end
