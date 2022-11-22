@@ -23,7 +23,8 @@ class PetsController < ApplicationController
   end
 
   def show
-    authorize @pet
+    @pets = Pet.all
+    authorize @pets
   end
 
   def create
