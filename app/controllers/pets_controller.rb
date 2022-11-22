@@ -10,6 +10,7 @@ class PetsController < ApplicationController
   end
 
   def update
+    @pet = Pet.find(pet_params)
     authorize @pet
   end
 
@@ -36,6 +37,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name)
+    params.require(:pet).permit(:name, :id)
   end
 end
