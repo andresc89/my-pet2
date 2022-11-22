@@ -23,8 +23,8 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pets = Pet.all
-    authorize @pets
+    @pet = Pet.find(params[:id])
+    authorize @pet
   end
 
   def create
