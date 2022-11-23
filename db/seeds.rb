@@ -8,5 +8,27 @@
 require 'faker'
 
 puts 'Loading'
+Pet.destroy_all
+
+# 5.times do
+#   user = User.new(
+#     first_name: Faker::Creature::Dog.name,
+#     last_name: Faker::Creature::Dog.name,
+#     email: Faker::Internet.email,
+#     username: Faker::Internet.username,
+#     password: Faker::Internet.password
+#   )
+#   user.save!
+# end
+
+# 5.times do
+#   pet = Pet.new(
+#     name: Faker::Creature::Dog.name,
+#     species: Faker::Creature::Animal.name,
+#     price: rand(5..100)
+#   )
+#   pet.user = User.all.sample
+#   pet.save!
+# end
 
 puts 'Finished'
