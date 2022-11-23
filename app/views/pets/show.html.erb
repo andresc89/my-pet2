@@ -5,10 +5,10 @@
     <img src="<%= cl_image_path @pet.photo.key, height: 300, crop: :fill %>" />
     <div class="card-product-infos">
       <h2><strong>Name:</strong> <%=  @pet.name %></h2>
-      <p> <strong>Specie:</strong> <%=  @pet.species %><strong> Price:</strong> <%= @pet.price %>€</p>
+      <p> <strong>Specie:</strong> <%=  @pet.species %><strong> Price:</strong> <%= '%.2f' % @pet.price %>€</p>
     </div>
   </div>
-  <%= link_to "Back to pets", pets_path%>
-  <%= link_to "Edit pet details", edit_pet_path%>
-  <%= button_to "Destroy this pet", @pet, method: :delete if policy(@pet).destroy? %>
+  <%= link_to "Back to pets", pets_path, :class=>"btn btn-warning btn-rounded btn-show"%>
+  <%= link_to "Edit pet details", edit_pet_path, :class=>"btn btn-warning btn-rounded btn-show"%>
+  <%= button_to "Destroy this pet", @pet, :class=>"btn btn-warning btn-rounded btn-show", method: :delete if policy(@pet).destroy? %>
 </div>
