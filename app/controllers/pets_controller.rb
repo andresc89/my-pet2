@@ -1,8 +1,15 @@
 class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
 
+  after_action :verify_policy_scoped, only: [:my_pets, :index], unless: :skip_pundit?
+  after_action :verify_authorized, except: [:my_pets, :index]
+
   def index
     @pets = policy_scope(Pet)
+  end
+
+  def my_pets
+    @pets = policy_scope(Pet).where(user: current_user)
   end
 
   def edit
