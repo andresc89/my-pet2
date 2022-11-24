@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def new
+    @user = current_user
     @pet = Pet.find(params[:pet_id])
     @booking = Booking.new
     authorize @booking
@@ -13,6 +14,16 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new(booking_params)
+    @pet = Pet.find(params[:pet_id])
+    @booking.user = current_user
+    @booking.pet = @pet
+    authorize @booking
+    if @booking.save
+      redirect_to pet_booking_path(@pet, @booking)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def index
@@ -43,7 +54,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def pet_params
+  def booking_params
     params.require(:booking).permit([:start_date, :end_date])
   end
 end

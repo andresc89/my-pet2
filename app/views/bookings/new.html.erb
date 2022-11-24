@@ -1,23 +1,19 @@
-<h1>bookings</h1>
-<div class="container">
-
-    <body>
-      <form>
-        <br>
-        <br>
-        Start Date: <input type = "date"><button type="submit" name="btn">Submit</button>
-      </form>
-      <form>
-        <br>
-        <br>
-        End Date: <input type = "date"><button type="submit" name="btn">Submit</button>
-      </form>
-      <br>
-      <br>
-</div>
-<p>inserir botão: Confirm Booking</p>
-
+<div class="container id="btn_edit py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Choose your booking dates</h3>
+        <%= simple_form_for [@pet,@booking] do |f| %>
+          <%= f.input :start_date, as: :string, input_html: {type: :date}%>
+          <%= f.input :end_date, as: :string, input_html: {type: :date}%>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
 <%= link_to "Back to pet", pet_path(@pet), :class=>"btn btn-warning btn-rounded btn-show"%>
 <%= link_to "Search other pet", pets_path, :class=>"btn btn-warning btn-rounded btn-show"%>
+    </div>
+  </div>
+</div>
+
 
 </body>
