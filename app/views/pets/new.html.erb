@@ -6,9 +6,9 @@
         <%= simple_form_for @pet do |f| %>
           <%= f.input :name, placeholder: 'name' %>
           <%= f.input :species, placeholder: 'specie' %>
-          <%= f.input :price, placeholder: 'price' %>
+          <%= f.input :price, placeholder: 'price', label: 'Price per day (€)' %>
           <%= f.input :photo, as: :file %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit class: 'btn btn-warning btn-rounded' %>
         <% end %>
       </div>
     </div>
