@@ -32,4 +32,14 @@
 
 .container-button {
   text-align: center;
+  align-items: center;
+}
+
+.buttoncontainer {
+  justify-content: space-around;
+}
+
+.nav-link-delete {
+  border:0px;
+  background-color: transparent;
 }

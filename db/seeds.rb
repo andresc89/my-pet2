@@ -31,4 +31,4 @@ Pet.destroy_all
 #   pet.save!
 # end
 
-puts 'Finished'
+# puts 'Finished'
