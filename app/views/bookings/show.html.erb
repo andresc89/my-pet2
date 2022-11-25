@@ -8,7 +8,7 @@
             <div class="box-inner-1 pb-3 mb-3 ">
                 <div class="d-flex justify-content-between mb-3 userdetails">
                     <p class="fw-bold"><%= @booking.pet[:name] %></p>
-                    <p class="fw-lighter"><span class="fas fa-dollar-sign"></span><%= '%.2f' % @booking.pet[:price] %>€</p>
+                    <p class="fw-lighter"><span class="fas"></span><%= '%.2f' % @booking.pet[:price] %>€</p>
                 </div>
                 <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
                     data-bs-interval="2000">
@@ -46,7 +46,11 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+
+                </div>
+
               </div>
+
             </div>
         </div>
         <div class="container">
@@ -59,7 +63,9 @@
                 <form action="">
                     <div class="mb-3">
                         <p class="dis fw-bold mb-2">Email address</p>
-                        <input class="form-control" type="email" value="<%= @booking.user[:email] %>">
+
+                        <input class="form-control" type="email" value="">
+
                     </div>
                     <div>
                         <p class="dis fw-bold mb-2">Card details</p>
