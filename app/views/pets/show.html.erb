@@ -1,15 +1,19 @@
 <br>
 <br>
-<div class="container">
-  <div class="card-product">
-    <img src="<%= cl_image_path @pet.photo.key, height: 300, crop: :fill %>" />
-    <div class="card-product-infos">
+    <div class="container" style=width:"80%">
       <h2><strong>Name:</strong> <%=  @pet.name %></h2>
-      <p> <strong>Specie:</strong> <%=  @pet.species %><strong> Price:</strong> <%= '%.2f' % @pet.price %>€</p>
     </div>
+<div class="container">
+  <div class="card-product position-relative">
+    <img src="<%= cl_image_path @pet.photo.key, height: 300, crop: :fill %>" />
+    <div class="card-product-infos position-absolute bottom-0 start-0">
+      <p> <strong>Specie:</strong> <%=  @pet.species %> <br> <strong> Price:</strong> <%= '%.2f' % @pet.price %>€</p>
+    </div>
+   <div class="card-btns position-absolute top-50 start-50 translate-middle-y">
+      <%= link_to "Back to pets", pets_path, :class=>"btn btn-warning btn-rounded btn-show "%>
+      <%= link_to "Edit pet details", edit_pet_path, :class=>"btn btn-warning btn-rounded btn-show"%>
+      <%= link_to "Book this pet",  new_pet_booking_path(@pet), :class=>"btn btn-warning btn-rounded btn-show"%>
+      <%= button_to "Destroy this pet", @pet, :class=>"btn btn-warning btn-rounded btn-show ", method: :delete if policy(@pet).destroy? %>
+   </div>
   </div>
-  <%= link_to "Back to pets", pets_path, :class=>"btn btn-warning btn-rounded btn-show"%>
-  <%= link_to "Edit pet details", edit_pet_path, :class=>"btn btn-warning btn-rounded btn-show"%>
-  <%= link_to "Book this pet",  new_pet_booking_path(@pet), :class=>"btn btn-warning btn-rounded btn-show"%>
-  <%= button_to "Destroy this pet", @pet, :class=>"btn btn-warning btn-rounded btn-show", method: :delete if policy(@pet).destroy? %>
 </div>
