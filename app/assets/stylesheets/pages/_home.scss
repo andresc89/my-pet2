@@ -15,10 +15,11 @@
 
 .input-group {
   width: 256px;
+  background-color: #F2B880;
 }
 
 .input-group-text {
-  background-color: #EA9143;
+  background-color: #F2B880;
 }
 
 .btn-warning {
@@ -28,6 +29,7 @@
   margin: 15px;
   color:white;
   text-align:center;
+  background-color: #F2B880;
 }
 
 .container-button {
@@ -37,6 +39,7 @@
 
 .buttoncontainer {
   justify-content: space-around;
+  background-color: #F2B880;
 }
 
 .nav-link-delete {
@@ -45,5 +48,13 @@
 }
 
 .btn-search {
-  background-color: #EA9143;
+  background-color: #F2B880;
+}
+
+body {
+  background-color: #FFF4EC;
+}
+
+.navbar {
+  background-color: #FCF0E6;
 }
