@@ -1,3 +1,10 @@
+<div class="container">
+  <div class="d-flex justify-content-between mb-4">
+    <h1> Your pets</h1>
+    <%= link_to "Back to pets", pets_path, :class=>"btn btn-warning btn-rounded btn-show"%>
+
+  </div>
+
  <div class="row">
       <% @pets.each do |pet| %>
         <div class="co-12 col-sm-6 col-md-4 mb-3">
@@ -10,5 +17,4 @@
       <% end %>
     </div>
   </div>
-     <%= link_to "Back to pets", pets_path, :class=>"btn btn-warning btn-rounded btn-show"%>
-     
+</div>
