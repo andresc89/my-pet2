@@ -1,37 +1,34 @@
-
+<div class="tocenter">
 <div class="container d-flex">
-<div class="container d-lg-flex">
-        <div class="col-6">
-            <div class="d-flex align-items-center mb-3">
-                <h1 class="fw-bold"> Your buddy for the day</h1>
-            </div>
-            <div class="box-inner-1 pb-3 mb-3 ">
-                <div class="d-flex justify-content-between mb-3 userdetails">
-                    <p class="fw-bold"><%= @booking.pet[:name] %></p>
-                    <p class="fw-lighter"><span class="fas"></span><%= '%.2f' % @booking.pet[:price] %>€</p>
-                </div>
-                <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"
-                    data-bs-interval="2000">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#my" data-bs-slide-to="0" class="active"
-                            aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#my" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#my" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="<%= cl_image_path @booking.pet.photo.key, height: 300, crop: :fill %>"
+  <div class="container d-lg-flex">
+    <div class="col-6">
+      <div class="d-flex align-items-center mb-3">
+        <h1 class="fw-bold"> Your buddy for the day</h1>
+      </div>
+        <div class="box-inner-1 pb-3 mb-3 ">
+          <div class="d-flex justify-content-between mb-3 userdetails">
+            <p class="fw-bold">Estimated Booking Price</p>
+            <p class="fw-lighter"><span class="fas"></span><%= '%.2f' % @booking.pet[:price] %>€</p>
+          </div>
+            <div id="my" class="carousel slide carousel-fade img-details" data-bs-ride="carousel"data-bs-interval="2000">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#my" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#my" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#my" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="<%= cl_image_path @booking.pet.photo.key, height: 300, crop: :fill %>"class="d-block w-100"/>
+                      </div>
+                        <div class="carousel-item">
+                          <img src="<%= cl_image_path @booking.pet.photo.key, height: 300, crop: :fill %>"
                                 class="d-block w-100" />
                         </div>
                         <div class="carousel-item">
                             <img src="<%= cl_image_path @booking.pet.photo.key, height: 300, crop: :fill %>"
                                 class="d-block w-100" />
                         </div>
-                        <div class="carousel-item">
-                            <img src="<%= cl_image_path @booking.pet.photo.key, height: 300, crop: :fill %>"
-                                class="d-block w-100" />
                         </div>
-                    </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#my" data-bs-slide="prev">
                         <div class="icon">
                             <span class="fas fa-arrow-left"></span>
@@ -108,20 +105,18 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-2">
                                     <p>VAT<span>(23%)</span></p>
-                                    <p><span class="fas"></span><%= '%.2f' % (@booking.pet[:price] * 0.23) %></p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p class="fw-bold">Total</p>
-                                    <p class="fw-bold"><span></span><%= '%.2f' % (@booking.pet[:price] * 1.23)%></p>
-                                </div>
-                                 <%= link_to "Pay #{'%.2f' % (@booking.pet[:price] * 1.23)}", pets_path, :class=>"btn btn-warning btn-rounded btn-show "%>
-                            </div>
-                        </div>
+                        <p><span class="fas"></span><%= '%.2f' % (@booking.pet[:price] * 0.23) %></p>
+                      </div>
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <p class="fw-bold">Total</p>
+                      <p class="fw-bold"><span></span><%= '%.2f' % (@booking.pet[:price] * 1.23)%></p>
                     </div>
-                </form>
-            </div>
-        </div>
+                    <%= link_to "Pay #{'%.2f' % (@booking.pet[:price] * 1.23)}", pets_path, :class=>"btn btn-warning btn-rounded btn-show "%>
+                  </div>
+              </div>
+          </div>
+        </form>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 </div>
